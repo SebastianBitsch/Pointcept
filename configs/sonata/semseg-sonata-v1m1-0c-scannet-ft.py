@@ -1,8 +1,8 @@
 _base_ = ["../_base_/default_runtime.py"]
 
 # misc custom setting
-batch_size = 24  # bs: total bs in all gpus
-num_worker = 48
+batch_size = 4  # bs: total bs in all gpus
+num_worker = 8
 mix_prob = 0.8
 clip_grad = 3.0
 empty_cache = False
@@ -51,6 +51,7 @@ model = dict(
 )
 
 # scheduler settings
+eval_epoch = 10
 epoch = 800
 optimizer = dict(type="AdamW", lr=0.002, weight_decay=0.02)
 scheduler = dict(
@@ -65,7 +66,7 @@ param_dicts = [dict(keyword="block", lr=0.0002)]
 
 # dataset settings
 dataset_type = "ScanNetDataset"
-data_root = "data/scannet"
+data_root = "/work3/s204157/data/ego3d/preprocessed_data"
 
 data = dict(
     num_classes=20,

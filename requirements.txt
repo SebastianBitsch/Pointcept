@@ -1,0 +1,29 @@
+# besides whats already in sonata/requiremtns,txt
+h5py
+pyyaml
+sharedarray
+tensorboard
+tensorboardx
+yapf
+addict
+einops
+scipy
+plyfile
+termcolor
+timm
+torch-geometric
+
+ftfy
+regex
+tqdm
+
+git+https://github.com/openai/CLIP.git
+
+# so we dont have to compile the shit cpp code with errors (error: unrecognized command line option '-mrelax-cmpxchg-loop')
+git+https://github.com/Silverster98/pointops
+
+--find-links https://data.pyg.org/whl/torch-2.5.0+cu124.html
+torch-cluster 
+torch-scatter
+torch-sparse
+nvidia-cuda-nvcc

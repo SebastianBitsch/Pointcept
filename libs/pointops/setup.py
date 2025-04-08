@@ -1,13 +1,13 @@
 import os
 from setuptools import setup
-from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 from distutils.sysconfig import get_config_vars
+from custom_build import CustomBuildExtension
+from torch.utils.cpp_extension import CUDAExtension
 
 (opt,) = get_config_vars("OPT")
 os.environ["OPT"] = " ".join(
     flag for flag in opt.split() if flag != "-Wstrict-prototypes"
 )
-
 src = "src"
 sources = [
     os.path.join(root, file)
@@ -15,7 +15,6 @@ sources = [
     for file in files
     if file.endswith(".cpp") or file.endswith(".cu")
 ]
-
 setup(
     name="pointops",
     version="1.0",
@@ -29,5 +28,5 @@ setup(
             extra_compile_args={"cxx": ["-g"], "nvcc": ["-O2"]},
         )
     ],
-    cmdclass={"build_ext": BuildExtension},
+    cmdclass={"build_ext": CustomBuildExtension},
 )
