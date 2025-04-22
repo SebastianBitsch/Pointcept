@@ -1,0 +1,3 @@
+[submodule "02501-Ego3D"]
+	path = 02501-Ego3D
+	url = git@github.com:jensModvig/02501-Ego3D.git
