@@ -38,11 +38,22 @@ export TORCH_CUDA_ARCH_LIST="8.0"
 cd ~/Pointcept
 source ~/sonata/.venv/bin/activate
 
+
+# Arguments
+# -m : NUM_MACHINE
+# -g : NUM_GPU
+# -c : CONFIG
+# -d : DATASET
+# -n : EXP_NAME
+# -w : WEIGHT
+# -p : PYTHON
+# -r : RESUME
+
 # See: https://github.com/Pointcept/Pointcept/blob/59891348502bca9ae58dcdffa605d62a519f4cbf/pointcept/models/sonata/README.md?plain=1#L52
 bash scripts/finetune.sh \
     -m 1 \
     -g 1 \
-    -c semseg-sonata-v1m1-0c-scannet-ft \
+    -c _semseg-sonata-v1m1-0c-scannet-ft \
     -d sonata \
     -n debug \
     -w /work3/s204157/data/ego3d/exp/scannet/debug/model/sonata.pth

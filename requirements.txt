@@ -27,3 +27,7 @@ torch-cluster
 torch-scatter
 torch-sparse
 nvidia-cuda-nvcc
+
+# for running scannet / 02501-Ego3D
+imageio
+pypng
